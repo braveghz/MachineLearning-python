@@ -1,0 +1,164 @@
+---
+title: python 学习
+tags:
+- python
+---
+
+看ML发现自己基本的python语法都分不清了，复习一下。
+
+---
+
+## List
+类似数组 index - value，索引从0开始，列表可以进行截取、组合··格式如下：
+```python
+list1 = ['physics', 'chemistry', 1997, 2000];
+list2 = [1, 2, 3, 4, 5 ];
+```
+hint：列表的数据项不需要具有相同的类型
+
+#### 访问列表的值
+```py
+#!/usr/bin/python
+
+list1 = ['physics', 'chemistry', 1997, 2000];
+list2 = [1, 2, 3, 4, 5, 6, 7 ];
+
+print "list1[0]: ", list1[0]
+print "list2[1:5]: ", list2[1:5]
+```
+
+结果：
+```python
+list1[0]:  physics
+list2[1:5]:  [2, 3, 4, 5] #注意这个
+```
+
+#### 更新列表
+你可以对列表的数据项进行修改或更新，你也可以使用append()方法来添加列表项，如下所示：
+
+```python
+#!/usr/bin/python
+
+list = ['physics', 'chemistry', 1997, 2000];
+print list[2];
+list[2] = 2001;
+print list[2];
+```
+结果：
+```python
+1997
+2001
+```
+
+#### 删除列表元素
+```python
+#!/usr/bin/python
+
+list1 = ['physics', 'chemistry', 1997, 2000];
+print list1;
+del list1[2];
+print list1;
+```
+结果：
+```python
+['physics', 'chemistry', 1997, 2000]
+['physics', 'chemistry', 2000]
+```
+
+#### 脚本操作符
+|Python表达式|结果|
+|:--|:--|
+|len([1, 2, 3])	|3|
+|[1, 2, 3] + [4, 5, 6]|	[1, 2, 3, 4, 5, 6]|
+|['Hi!'] * 4|['Hi!', 'Hi!', 'Hi!', 'Hi!']|
+|3 in [1, 2, 3]|True|	
+|for x in [1, 2, 3]: print x|	1 2 3|
+
+#### Python列表截取
+```python
+L = ['spam', 'Spam', 'SPAM!']
+```
+|Python表达式|	结果|Hint|
+|:--|:--|:--|
+|L[2]|'SPAM!'| |
+|L[-2]|'Spam'|读取列表中倒数第二个元素|
+|L[1:]|['Spam', 'SPAM!']|从第二个元素开始截取列表
+
+#### 函数&方法
+```python
+cmp(list1, list2) #比较两个列表的元素
+len(list)         #列表元素个数
+max(list)         #返回列表元素最大值
+min(list)         #返回列表元素最小值
+list(seq)         #将元组转换为列表
+
+list.append(obj)         #在列表末尾添加新对象
+list.count(obj)          #统计元素出现次数
+list.extend(seq)         #在列表末尾一次性追加另一个序列中的多个值（用新列表扩展原来的列表）
+list.index(obj)          #从列表中找出某个 值第一个匹配项 的索引位置
+list.insert(index, obj)  #将对象插入列表
+list.pop(obj=list[-1])   #移除列表中的一个元素（默认最后一个元素），并且返回该元素的值
+list.remove(obj)         #移除列表中某个值的第一个匹配项
+list.reverse()           #反向列表中元素
+list.sort([func])        #对原列表进行排序
+```
+---
+
+## Python 元组
+Python的元组与列表类似，不同之处在于元组的元素不能修改。
+元组使用小括号，列表使用方括号。
+元组创建很简单，只需要在括号中添加元素，并使用逗号隔开即可。
+如下实例：
+tup1 = ('physics', 'chemistry', 1997, 2000);
+tup2 = (1, 2, 3, 4, 5 );
+tup3 = "a", "b", "c", "d";
+创建空元组
+tup1 = ();
+元组中只包含一个元素时，需要在元素后面添加逗号
+tup1 = (50,);
+元组与字符串类似，下标索引从0开始，可以进行截取，组合等。
+访问元组
+元组可以使用下标索引来访问元组中的值，如下实例:
+#!/usr/bin/python
+
+tup1 = ('physics', 'chemistry', 1997, 2000);
+tup2 = (1, 2, 3, 4, 5, 6, 7 );
+
+print "tup1[0]: ", tup1[0]
+print "tup2[1:5]: ", tup2[1:5]
+以上实例输出结果：
+tup1[0]:  physics
+tup2[1:5]:  (2, 3, 4, 5)
+修改元组
+元组中的元素值是不允许修改的，但我们可以对元组进行连接组合，如下实例:
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
+tup1 = (12, 34.56);
+tup2 = ('abc', 'xyz');
+
+# 以下修改元组元素操作是非法的。
+# tup1[0] = 100;
+
+# 创建一个新的元组
+tup3 = tup1 + tup2;
+print tup3;
+以上实例输出结果：
+(12, 34.56, 'abc', 'xyz')
+删除元组
+元组中的元素值是不允许删除的，但我们可以使用del语句来删除整个元组，如下实例:
+#!/usr/bin/python
+
+tup = ('physics', 'chemistry', 1997, 2000);
+
+print tup;
+del tup;
+print "After deleting tup : "
+print tup;
+以上实例元组被删除后，输出变量会有异常信息，输出如下所示：
+('physics', 'chemistry', 1997, 2000)
+After deleting tup :
+Traceback (most recent call last):
+  File "test.py", line 9, in <module>
+    print tup;
+NameError: name 'tup' is not defined
