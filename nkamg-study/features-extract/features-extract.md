@@ -64,7 +64,7 @@ Capturing on 'eth0'
 ```
 用wireshark打开，长下面这样
 
-![](images/1.png)
+![](https://github.com/braveghz/MachineLearning-python/blob/master/nkamg-study/features-extract/images/1.png)
 
 可以看到信息：`no`/ `time`/ `source`/ `destination`/ `protocol`/ `length`/ `info`...实际上的pcap文件信息应该多得多
 
@@ -74,7 +74,7 @@ tshark -r 1.pcap -T fields -e eth.src -e eth.dst -e ip.src -e ip.dst -e ip.proto
 ```
 ok
 
-![](images/2.png)
+![](https://github.com/braveghz/MachineLearning-python/blob/master/nkamg-study/features-extract/images/2.png)
 
 ## 参考
 [Using tshark to Watch and Inspect Network Traffic](http://www.linuxjournal.com/content/using-tshark-watch-and-inspect-network-traffic)
