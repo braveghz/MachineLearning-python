@@ -97,10 +97,12 @@ ok
 @An empirical comparison of botnet detection methods
 
 1. MINDS
+
      - the number of NetFlows from the same source IP address as the evaluated NetFlow
      - the number of NetFlows toward the same destination host
      - the number of NetFlows toward the same destination host from the same source port
      - the number of NetFlows toward the same destination port from the same source host  
+
     ```py
     grouped1=df.groupby('SrcAddr')
     for k,v in grouped1:
@@ -120,10 +122,12 @@ ok
     ```
 
 2. Xu
+
 the context of each NetFlow to be evaluated is created with all the NetFlows coming from the same source IP address.
     - the normalized entropy of the source port
     - the normalized entropy of the destination ports
     - the normalized entropy of the destination IP addresses
+
 The distance between the contexts of two NetFlows is computed as the difference between the three normalized entropies, combined as the sum of their squares. 
     
     ```py
@@ -154,8 +158,8 @@ The distance between the contexts of two NetFlows is computed as the difference 
     print "en_DstAddr",en_DstAddr
     ```
 
-
 3. Lakhina Volume
+
     for each source IP address:
     - the number of NetFlows
     - number of bytes
@@ -174,21 +178,23 @@ The distance between the contexts of two NetFlows is computed as the difference 
     print "number of SrcBytes:",SrcBytes.sum()
     ```
 
-
 4. Lakhina Entropy
+
     for each source IP address:
     - the entropies of destination IP addresses
     - the entropies of destination ports
     - the entropies of source ports
+
     see 2.Xu
 
 
 5. TAPS
+
     The algorithm only considers the traffic sources that created at least one single-packet NetFlow during a particular observation period.
     - number of destination IP addresses
     - number of destination ports 
     - the entropy of the NetFlow size measured in number of packets.
-    
+
     ```py
     grouped1=df.groupby('DstAddr')
     print len(grouped1) 
@@ -207,6 +213,7 @@ The distance between the contexts of two NetFlows is computed as the difference 
     It uses the same features as Lakhina Entropy detector described above. see 4.Lakhina Entropy
 
 7. Flags
+
     uses the same detection method as the KGB detector. The only difference is in the input feature vector.
     
     The feature vector of the Flags detector is determined by the histogram of the TCP Flags of all the NetFlows with the same IP address. 
