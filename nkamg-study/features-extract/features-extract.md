@@ -123,12 +123,12 @@ ok
 
 2. Xu
 
-the context of each NetFlow to be evaluated is created with all the NetFlows coming from the same source IP address.
+    the context of each NetFlow to be evaluated is created with all the NetFlows coming from the same source IP address.
     - the normalized entropy of the source port
     - the normalized entropy of the destination ports
     - the normalized entropy of the destination IP addresses
 
-The distance between the contexts of two NetFlows is computed as the difference between the three normalized entropies, combined as the sum of their squares. 
+    The distance between the contexts of two NetFlows is computed as the difference between the three normalized entropies, combined as the sum of their squares. 
     
     ```py
     grouped=df.groupby('SrcAddr')
