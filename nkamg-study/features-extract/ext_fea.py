@@ -151,11 +151,11 @@ def __ext_feat(ifile):
     grouped2=df.groupby('Dport')
     print len(grouped2)
     grouped3=df.groupby(df['TotPkts'])
-    DstAddrCount=[]
+    TotPktsCount=[]
     for k,v in grouped3:
-        DstAddrCount.append(len(v.index))
-    en_DstAddr=entropy(DstAddrCount)
-    print "en_DstAddr",en_DstAddr
+        TotPktsCount.append(len(v.index))
+    en_TotPkts=entropy(TotPktsCount)
+    print "en_TotPkts",en_TotPkts
 
 
     ### KGB
