@@ -1,8 +1,3 @@
----
-title: python 学习
-tags:
-- python
----
 
 看ML发现自己基本的python语法都分不清了，复习一下。
 

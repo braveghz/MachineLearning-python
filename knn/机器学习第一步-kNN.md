@@ -288,8 +288,6 @@ The classify accuracy is: 98.63%
 
 ```
 
-
-
 ### 参考文献
 
 [机器学习算法与Python实践之（一）k近邻（KNN](http://blog.csdn.net/zouxy09/article/details/16955347)
